@@ -6,9 +6,9 @@
 import configparser #module pour l'utilisation d'un fichier ini
 import xml.etree.ElementTree #module de parcours xml
 
-#Déclarations
-	#Stocker les chemins et autres paramètres modifiables par l'utilisateur dans un fichier de configuration
-def conf_parsing()
+#chargement du fichier de configuration
+config = configparser.ConfigParser()
+config.read('./fwconfig.ini')
 
 #Fonctions
 def nom_fonction(param1,param2,param3):
