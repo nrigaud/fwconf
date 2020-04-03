@@ -44,9 +44,8 @@ def create_fw_services(servicename,description,port)
  else:
   fwcmd = "firewall-offline-cmd"
 
-
  #Attention avec shell=true https://docs.python.org/fr/3/library/subprocess.html#security-considerations
- process = subprocess.run("fw_command --permanent --add-rich-rule=\'{0}\'".format(rule),shell=True)
+ process = subprocess.run("fwcmd --permanent --add-rich-rule=\'{0}\'".format(rule),shell=True)
  
 #Fonction de paramétrage des ports dans les services
 	#On vérifie d'abord l'état du pare-feu
