@@ -64,12 +64,37 @@ def create_fw_services(servicename,description,port)
     #Contenu à prendre:
     # exemple de récupération d'une valeur précise
         # ipaddr1_var = root.find(".//gcm-app/network/ip/ipaddr1").text
+	#
         # valeurs récupérables dans config-gvr.xml:
+	# Audio port PO Début: .//common-prm/rtp/audio-port-po/min
+	# Audio port PO Fin: .//common-prm/rtp/audio-port-po/max
+	# Audio port Radio Début: .//common-prm/rtp/audio-port-radio/min
+	# Audio port Radio Fin: .//common-prm/rtp/audio-port-radio/max
+	# Audio port AG Début: .//common-prm/rtp/audio-port-ag/min
+	# Audio port AG Fin: .//common-prm/rtp/audio-port-ag/max
+	# Audio port PO-FS Début: .//common-prm/rtp/audio-port-po-fs/min
+	# Audio port PO-FS Fin: .//common-prm/rtp/audio-port-po-fs/max	
+	# Audio port pabx Début: .//common-prm/rtp/audio-port-pabx/min
+	# Audio port pabx Fin: .//common-prm/rtp/audio-port-pabx/max
+	# Audio port AG-SGP Début: .//common-prm/rtp/audio-port-ag-sgp/min
+	# Audio port AG-SGP Fin: .//common-prm/rtp/audio-port-ag-sgp/max
+	# Audio port enr Début: .//common-prm/rtp/audio-port-enr/min
+	# Audio port enr Fin: .//common-prm/rtp/audio-port-enr/max
+	# Audio port asterisk Début: .//common-prm/rtp/audio-port-asterisk/min
+	# Audio port asterisk Fin: .//common-prm/rtp/audio-port-asterisk/max
+	# Enr RTSP: .//evr-app/rtsp-port
         # GCM IP 1 : .//gcm-app/network/ip/ipaddr1
         # GCM IP 2 : .//gcm-app/network/ip/ipaddr2
         # GCM masque de sous réseau : .//gcm-app/network/ip/snmsk
-        # GCM Port : .//gcm-app/network/ip/ipport
+        # GCM Port : .//gcm-app/network/ip/ipport (port 5064 en écoute)
         # GCA IP 1 : .//gca-app/network/ip/ipport
         # GCA masque de sous réseau : .//gca-app/network/ip/snmsk
         # GCA Port : .//gca-app/network/ip/ipport
         # ...
+	# Si secured=false on prend WS .//super-list/supervisor/secured
+ 	# SAPEX Port WS: : .//super-list/supervisor/ws-port
+	# Asterisk SIP: .//asterisk-list/asterisk/listen-port
+	# INTERSGP: .//asterisk-list/asterisk/r33-port
+	# SAPEX Port WSS: : .//super-list/supervisor/wss-port
+	
+
