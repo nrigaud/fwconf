@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #Cartouche
     #Référence,prérequis environnement, auteur, version, historique
   
@@ -16,13 +18,21 @@ config.read('./fwconfig.ini')
 #Fonction pour vérifier qu'un service est démarré
 def is_active(service):
  """Return True if service is running"""
- proc = subprocess.Popen("systemctl status "service, shell=True,stdout=subprocess.PIPE)
- stdout_list = proc.communicate()[0].split('\n')
+ proc = subprocess.Popen(["systemctl", "status", service], shell=True,stdout=subprocess.PIPE)
+ stdout_list = proc.communicate()[0].decode("utf-8").split('\n')
  for line in stdout_list:
   if 'Active:' in line:
    if '(running)' in line:
     return True
  return False
+#Exemple d'utilisation de la fonction
+#if is_active("firewalld") == True:
+# print("True")
+#elif is_active("firewalld") == False:
+# print("False")
+#else:
+# print("Unknown state")
+
 
 #Fonction pour la création des services de pare-feu
 	#On vérifie d'abord l'état du pare-feu
