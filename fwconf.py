@@ -13,6 +13,8 @@ import subprocess #module utilisé pour invoquer firewall-cmd
 config = configparser.ConfigParser()
 config.read('./fwconfig.ini')
 
+#Service à déclarer (dans le fichier INI)
+
 #Fonctions
 	
 #Fonction pour vérifier qu'un service est démarré
