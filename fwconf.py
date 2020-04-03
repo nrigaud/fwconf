@@ -35,11 +35,13 @@ def is_active(service):
 
 
 #Fonction pour la création des services de pare-feu
-	#On vérifie d'abord l'état du pare-feu
-    #utilisation de la commande firewall-cmd si le pare-feu est démarré
-    #utilisation de la commande firewall-offline-cmd si le pare-feu est arrêté
 def create_fw_services(servicename,description,port)
- #On vérifie si firewalld est démarré
+ #On vérifie si firewalld est démarré et on définit la commande à utiliser
+ if is_active("firewalld") == True:
+  fwcmd = "firewall-cmd"
+ else:
+  fwcmd = "firewall-offline-cmd"
+
 
  #Attention avec shell=true https://docs.python.org/fr/3/library/subprocess.html#security-considerations
  process = subprocess.run("fw_command --permanent --add-rich-rule=\'{0}\'".format(rule),shell=True)
