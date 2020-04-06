@@ -27,14 +27,6 @@ def is_active(service):
    if '(running)' in line:
     return True
  return False
-#Exemple d'utilisation de la fonction
-#if is_active("firewalld") == True:
-# print("True")
-#elif is_active("firewalld") == False:
-# print("False")
-#else:
-# print("Unknown state")
-
 
 #Fonction pour la création des services de pare-feu
 def create_fw_services(servicename,description,port)
